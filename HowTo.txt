@@ -1,0 +1,33 @@
+LFSLFS -> Lazy Full Scripted LFS -> Lazzy Full Scripted Linux From Scratch
+
+Based on Anton Video LFS :: https://youtu.be/VSBkJ3rj-X4
+
+Build Linux From Scratch can be a great and time consuming learning experience.
+
+However Not everybody have the time to copy/paste all the commands.
+
+All the heavy lifting will be done by the shell scripts and you can just enjoy and see all the processing.
+
+The scripts are divided in phases.
+
+1) Requirements to  build enviornment
+    Virtual Box
+    Boot XUbuntu Live ISO
+    setup xubuntu user password
+    Install & Start SSH Server
+    Install screen and some other required dependencies for the Build.
+    Download and Verify all the LFS Sources.
+    
+2) Simple Shell Script (2) will create the first part of the temp File System
+      Basically just copy/paste the shell script
+      chmod 755 lfslfs_2.sh
+      ./lfslfs_2.sh
+      
+3) Once chroot ... the script (3) will be in charge of uncompress, build, test and install your system
+      Basically just copy/paste the shell script
+      chmod 755 lfslfs_3.sh
+      ./lfslfs_3.sh
+
+4) Final Touches to wrap the installation. and boot the new system.
+
+5) Posible work on script to finish a X Graphical installation with different window manager.
