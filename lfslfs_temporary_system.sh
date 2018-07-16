@@ -1,6 +1,9 @@
 
 begin=$(date +"%s")
 echo "STARTING SLFS"
+nowis=$(date +"%s")
+difftimelps=$(($nowis-$begin))
+echo "`date`    $difftimelps                    Starting SLFS Temporary System"          > ~/slfs_temp_sys.log
 
 tar -xf binutils-2.30.tar.xz
 cd binutils-2.30
@@ -24,6 +27,10 @@ make install
 
 cd ../../
 rm -R -f binutils-2.30
+nowis=$(date +"%s")
+difftimelps=$(($nowis-$begin))
+echo "`date`    $difftimelps                    Processed: binutils-2.30"          >>~/slfs_temp_sys.log
+
 
 tar -xf gcc-7.3.0.tar.xz
 cd gcc-7.3.0
@@ -87,6 +94,9 @@ make install
 
 cd ../../
 rm -R -f gcc-7.3.0
+nowis=$(date +"%s")
+difftimelps=$(($nowis-$begin))
+echo "`date`    $difftimelps                    Processed: gcc-7.3.0"          >>~/slfs_temp_sys.log
 
 
 tar -xf linux-4.15.3.tar.xz
@@ -96,7 +106,9 @@ make INSTALL_HDR_PATH=dest headers_install
 cp -rv dest/include/* /tools/include
 cd ../
 rm -R -f linux-4.15.3
-
+nowis=$(date +"%s")
+difftimelps=$(($nowis-$begin))
+echo "`date`    $difftimelps                    Processed: linux-4.15.3"          >>~/slfs_temp_sys.log
 
 tar -xf glibc-2.27.tar.xz
 cd glibc-2.27
@@ -124,6 +136,10 @@ rm -v dummy.c a.out
 
 cd ../../
 rm -R -f glibc-2.27
+nowis=$(date +"%s")
+difftimelps=$(($nowis-$begin))
+echo "`date`    $difftimelps                    Processed: glibc-2.27"          >>~/slfs_temp_sys.log
+
 
 tar -xf gcc-7.3.0.tar.xz
 cd gcc-7.3.0
@@ -145,6 +161,9 @@ make install
 
 cd ../../
 rm -R -f gcc-7.3.0
+nowis=$(date +"%s")
+difftimelps=$(($nowis-$begin))
+echo "`date`    $difftimelps                    Processed: gcc-7.3.0"          >>~/slfs_temp_sys.log
 
 tar -xf binutils-2.30.tar.xz
 cd binutils-2.30 
@@ -169,7 +188,11 @@ make -C ld LIB_PATH=/usr/lib:/lib
 cp -v ld/ld-new /tools/bin
 
 cd ../../
- rm -R -f binutils-2.30
+rm -R -f binutils-2.30
+nowis=$(date +"%s")
+difftimelps=$(($nowis-$begin))
+echo "`date`    $difftimelps                    Processed: binutils-2.30"          >>~/slfs_temp_sys.log
+
 
 tar -xf gcc-7.3.0.tar.xz
 cd gcc-7.3.0
@@ -228,6 +251,11 @@ ln -sv gcc /tools/bin/cc
 
 cd ../../
 rm -R -f gcc-7.3.0
+nowis=$(date +"%s")
+difftimelps=$(($nowis-$begin))
+echo "`date`    $difftimelps                    Processed: gcc-7.3.0"          >>~/slfs_temp_sys.log
+
+
 
 tar -xf tcl8.6.8-src.tar.gz
 cd tcl8.6.8
@@ -244,6 +272,10 @@ ln -sv tclsh8.6 /tools/bin/tclsh
 
 cd ../../
 rm -R -f tcl8.6.8
+nowis=$(date +"%s")
+difftimelps=$(($nowis-$begin))
+echo "`date`    $difftimelps                    Processed: tcl8.6.8"          >>~/slfs_temp_sys.log
+
 
 tar -xf expect5.45.4.tar.gz
 cd expect5.45.4
@@ -261,6 +293,10 @@ make SCRIPTS="" install
 
 cd ../
 rm -R -f expect5.45.4
+nowis=$(date +"%s")
+difftimelps=$(($nowis-$begin))
+echo "`date`    $difftimelps                    Processed: expect5.45.4"          >>~/slfs_temp_sys.log
+
 
 tar -xf dejagnu-1.6.1.tar.gz
 cd dejagnu-1.6.1
@@ -271,6 +307,10 @@ make check
 
 cd ../
 rm -R -f dejagnu-1.6.1
+nowis=$(date +"%s")
+difftimelps=$(($nowis-$begin))
+echo "`date`    $difftimelps                    Processed: dejagnu-1.6.1"          >>~/slfs_temp_sys.log
+
 
 tar -xf m4-1.4.18.tar.xz
 cd m4-1.4.18
@@ -282,6 +322,10 @@ make install
 
 cd ../
 rm -R -f m4-1.4.18
+nowis=$(date +"%s")
+difftimelps=$(($nowis-$begin))
+echo "`date`    $difftimelps                    Processed: m4-1.4.18"          >>~/slfs_temp_sys.log
+
 
 tar -xf ncurses-6.1.tar.gz
 cd ncurses-6.1
@@ -298,6 +342,10 @@ make install
 
 cd ../
 rm -R -f ncurses-6.1
+nowis=$(date +"%s")
+difftimelps=$(($nowis-$begin))
+echo "`date`    $difftimelps                    Processed: ncurses-6.1"          >>~/slfs_temp_sys.log
+
 
 tar -xf bash-4.4.18.tar.gz
 cd bash-4.4.18
@@ -310,6 +358,10 @@ ln -sv bash /tools/bin/sh
 
 cd ../
 rm -R -f bash-4.4.18
+nowis=$(date +"%s")
+difftimelps=$(($nowis-$begin))
+echo "`date`    $difftimelps                    Processed: bash-4.4.18"          >>~/slfs_temp_sys.log
+
 
 tar -xf bison-3.0.4.tar.xz
 cd bison-3.0.4
@@ -321,6 +373,10 @@ make install
 
 cd ../
 rm -R -f bison-3.0.4
+nowis=$(date +"%s")
+difftimelps=$(($nowis-$begin))
+echo "`date`    $difftimelps                    Processed: bison-3.0.4"          >>~/slfs_temp_sys.log
+
 
 tar -xf bzip2-1.0.6.tar.gz
 cd bzip2-1.0.6
@@ -329,6 +385,10 @@ make
 make PREFIX=/tools install
 cd ../
 rm -R -f bzip2-1.0.6
+nowis=$(date +"%s")
+difftimelps=$(($nowis-$begin))
+echo "`date`    $difftimelps                    Processed: bzip2-1.0.6"          >>~/slfs_temp_sys.log
+
 
 tar -xf coreutils-8.29.tar.xz
 cd coreutils-8.29
@@ -341,6 +401,10 @@ make install
 
 cd ../
 rm -R -f coreutils-8.29
+nowis=$(date +"%s")
+difftimelps=$(($nowis-$begin))
+echo "`date`    $difftimelps                    Processed: coreutils-8.29"          >>~/slfs_temp_sys.log
+
 
 tar -xf diffutils-3.6.tar.xz
 cd diffutils-3.6
@@ -352,6 +416,10 @@ make install
 
 cd ../
 rm -R -f diffutils-3.6
+nowis=$(date +"%s")
+difftimelps=$(($nowis-$begin))
+echo "`date`    $difftimelps                    Processed: diffutils-3.6"          >>~/slfs_temp_sys.log
+
 
 tar -xf file-5.32.tar.gz
 cd file-5.32
@@ -363,6 +431,10 @@ make install
 
 cd ../
 rm -R -f file-5.32
+nowis=$(date +"%s")
+difftimelps=$(($nowis-$begin))
+echo "`date`    $difftimelps                    Processed: file-5.32"          >>~/slfs_temp_sys.log
+
 
 tar -xf findutils-4.6.0.tar.gz
 cd findutils-4.6.0
@@ -374,6 +446,10 @@ make install
 
 cd ../
 rm -R -f findutils-4.6.0
+nowis=$(date +"%s")
+difftimelps=$(($nowis-$begin))
+echo "`date`    $difftimelps                    Processed: findutils-4.6.0"          >>~/slfs_temp_sys.log
+
 
 tar -xf gawk-4.2.0.tar.xz
 cd gawk-4.2.0
@@ -385,6 +461,10 @@ make install
 
 cd ../
 rm -R -f gawk-4.2.0
+nowis=$(date +"%s")
+difftimelps=$(($nowis-$begin))
+echo "`date`    $difftimelps                    Processed: gawk-4.2.0"          >>~/slfs_temp_sys.log
+
 
 tar -xf gettext-0.19.8.1.tar.xz
 cd gettext-0.19.8.1
@@ -399,7 +479,10 @@ make -C src xgettext
 cp -v src/{msgfmt,msgmerge,xgettext} /tools/bin
 
 cd ../../
-rm -R -f gettext-tools/
+rm -R -f gettext-0.19.8.1
+nowis=$(date +"%s")
+difftimelps=$(($nowis-$begin))
+echo "`date`    $difftimelps                    Processed: gettext-0.19.8.1"          >>~/slfs_temp_sys.log
 
 tar -xf grep-3.1.tar.xz
 cd grep-3.1
@@ -411,6 +494,9 @@ make install
 
 cd ../
 rm -R -f grep-3.1
+nowis=$(date +"%s")
+difftimelps=$(($nowis-$begin))
+echo "`date`    $difftimelps                    Processed: grep-3.1"          >>~/slfs_temp_sys.log
 
 tar -xf gzip-1.9.tar.xz
 cd gzip-1.9
@@ -422,6 +508,10 @@ make install
 
 cd ../
 rm -R -f gzip-1.9
+nowis=$(date +"%s")
+difftimelps=$(($nowis-$begin))
+echo "`date`    $difftimelps                    Processed: gzip-1.9"          >>~/slfs_temp_sys.log
+
 
 tar -xf make-4.2.1.tar.bz2
 cd make-4.2.1
@@ -434,6 +524,9 @@ make install
 
 cd ../
 rm -R -f make-4.2.1
+nowis=$(date +"%s")
+difftimelps=$(($nowis-$begin))
+echo "`date`    $difftimelps                    Processed: make-4.2.1"          >>~/slfs_temp_sys.log
 
 tar -xf patch-2.7.6.tar.xz
 cd patch-2.7.6
@@ -445,6 +538,10 @@ make install
 
 cd ../
 rm -R -f patch-2.7.6
+nowis=$(date +"%s")
+difftimelps=$(($nowis-$begin))
+echo "`date`    $difftimelps                    Processed: patch-2.7.6"          >>~/slfs_temp_sys.log
+
 
 tar -xf perl-5.26.1.tar.xz
 cd perl-5.26.1
@@ -456,6 +553,10 @@ cp -Rv lib/* /tools/lib/perl5/5.26.1
 
 cd ../
 rm -R -f perl-5.26.1
+nowis=$(date +"%s")
+difftimelps=$(($nowis-$begin))
+echo "`date`    $difftimelps                    Processed: perl-5.26.1"          >>~/slfs_temp_sys.log
+
 
 tar -xf sed-4.4.tar.xz
 cd sed-4.4
@@ -467,6 +568,10 @@ make install
 
 cd ../
 rm -R -f sed-4.4
+nowis=$(date +"%s")
+difftimelps=$(($nowis-$begin))
+echo "`date`    $difftimelps                    Processed: sed-4.4"          >>~/slfs_temp_sys.log
+
 
 tar -xf tar-1.30.tar.xz
 cd tar-1.30
@@ -478,6 +583,9 @@ make install
 
 cd ../
 rm -R -f tar-1.30
+nowis=$(date +"%s")
+difftimelps=$(($nowis-$begin))
+echo "`date`    $difftimelps                    Processed: tar-1.30"          >>~/slfs_temp_sys.log
 
 tar -xf texinfo-6.5.tar.xz
 cd texinfo-6.5
@@ -489,6 +597,9 @@ make install
 
 cd ../
 rm -R -f texinfo-6.5
+nowis=$(date +"%s")
+difftimelps=$(($nowis-$begin))
+echo "`date`    $difftimelps                    Processed: texinfo-6.5"          >>~/slfs_temp_sys.log
 
 tar -xf util-linux-2.31.1.tar.xz
 cd util-linux-2.31.1
@@ -505,6 +616,9 @@ make install
 
 cd ../
 rm -R -f util-linux-2.31.1
+nowis=$(date +"%s")
+difftimelps=$(($nowis-$begin))
+echo "`date`    $difftimelps                    Processed: util-linux-2.31.1"          >>~/slfs_temp_sys.log
 
 tar -xf xz-5.2.3.tar.xz
 cd xz-5.2.3
@@ -516,15 +630,18 @@ make install
 
 cd ../
 rm -R -f xz-5.2.3
+nowis=$(date +"%s")
+difftimelps=$(($nowis-$begin))
+echo "`date`    $difftimelps                    Processed: xz-5.2.3"          >>~/slfs_temp_sys.log
 
 strip --strip-debug /tools/lib/*
 /usr/bin/strip --strip-unneeded /tools/{,s}bin/*
 rm -rf /tools/{,share}/{info,man,doc}
 find /tools/{lib,libexec} -name \*.la -delete
 
-echo "WHO IS THE MAN"
+echo "*** WHO IS THE MAN ***"
 termin=$(date +"%s")
 difftimelps=$(($termin-$begin))
-echo "Execution completed in: $difftimelps seconds"
-
+echo "Execution SLFS Temporary System completed in: $difftimelps seconds"
+echo "`date`    $difftimelps                    Completed SLFS Temporary System"          >>~/slfs_temp_sys.log
 
