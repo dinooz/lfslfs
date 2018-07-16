@@ -11,13 +11,55 @@ All the heavy lifting will be done by the shell scripts and you can just enjoy a
 The scripts are divided in phases.
 
 1) Requirements to  build enviornment
-    Virtual Box
-    Boot XUbuntu Live ISO
-    setup xubuntu user password
+
+	Create SLFS in Virtual Box
+		2048MB RAM
+		8GB hdd
+	Boot Xubuntu LIve ISO
+		xubuntu-18.04-desktop-amd64.iso
+
     Install & Start SSH Server
+    Install screen
+    Install htop
+
+    Set xubuntu password
+
+    Use GParted to create
+	100MB ext2 /boot
+	7.8GB ext4 /system
+
     Install screen and some other required dependencies for the Build.
     Download and Verify all the LFS Sources.
-    
+
+    Download/sudo lfslfs_reqs_check.sh
+    Download/sudo lfslfs_reqs_install.sh
+	
+dpkg-reconfigure dash
+apt -y install bison
+apt -y install gcc
+apt -y install g++
+apt -y install m4
+apt -y install make
+apt -y install makeinfo
+apt -y install texinfo
+
+apt -y install gawk
+apt -y install bison
+apt -y install automake
+
+    Download/sudo lfslfs_reqs_check.sh
+
+    Re-Run/sudo lfslfs_reqs_check.sh
+
+    Download/sudo lfslfs_download_files.sh
+
+    Download/cp lfslfs_setup_lfs.sh /home/lfs
+	chmod 755 /home/lfs/lfslfs_setup_lfs.sh
+	su - lfs
+	./lfslfs_setup_lfs.sh
+
+
+     
 2) Simple Shell Script (2) will create the first part of the temp File System
       Basically just copy/paste the shell script
       chmod 755 lfslfs_2.sh
