@@ -527,4 +527,3 @@ termin=$(date +"%s")
 difftimelps=$(($termin-$begin))
 echo "Execution completed in: $difftimelps seconds"
 
-
