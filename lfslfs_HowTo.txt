@@ -1,0 +1,46 @@
+
+As Xubuntu download lfslfs_get_started.sh
+  wget https://raw.githubusercontent.com/dinooz/lfslfs/master/lfslfs_get_started.sh
+  chmod 755 lfslfs_get_started.sh
+  ./lfslfs_get_started.sh
+
+sudo ./lfslfs_initial_ubuntu.sh
+
+sudo ./lfslfs_parted.sh
+- Xubuntu GUI-> Dismount this 2 new partitions that got automatically mounted
+
+- Verify LFS Dependencies could be as regular user or root
+./lfslfs_reqs_check.sh
+sudo ./lfslfs_reqs_check.sh
+
+sudo ./lfslfs_reqs_install.sh
+
+- As root:
+export LFS=/mnt/lfs
+/home/xubuntu/lfslfs_get_files.sh
+
+- As root
+/home/xubuntu/lfslfs_final_preparations.sh
+cp /home/xubuntu/lfslfs_setup_lfs.sh /home/lfs/lfslfs_setup_lfs.sh
+cp /home/xubuntu/lfslfs_temporary_system.sh $LFS/sources
+
+- As lfs
+su - lfs
+/home/lfs/lfslfs_setup_lfs.sh
+
+- As lfs
+cd $LFS/sources
+./lfslfs_temporary_system.sh
+
+- Temporary System build log at:
+- tail -f /home/lfs/slfs_temp_sys.log
+
+- As root
+cp /home/xubuntu/lfslfs_system_creating_dirs.sh $LFS/sources
+cp /home/xubuntu/lfslfs_system_basic_system_software.sh $LFS/sources
+/home/xubuntu/lfslfs_system_chroot.sh
+
+- As chroot
+- export LFS=/mnt/lfs
+$LFS/sources/lfslfs_system_creating_dirs.sh
+$LFS/sources/lfslfs_system_basic_system_software.sh
