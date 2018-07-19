@@ -645,6 +645,7 @@ grpconv
 
 sed -i 's/yes/no/' /etc/default/useradd
 
+echo "Please enter the root password."
 passwd root
 
 cd ../
