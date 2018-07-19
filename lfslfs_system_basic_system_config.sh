@@ -3,16 +3,16 @@
 
 cd /sources
 
-tar -xf LFS-Bootscripts-20170626....
-cd LFS....
+tar -xf lfs-bootscripts-20170626.tar.bz2
+cd lfs-bootscripts-20170626
 
 make install
 
 cd ../
-rm -R -f ....
+rm -R -f lfs-bootscripts-20170626
 
-softdep snd-pcm post: snd-pcm-oss
-blacklist forte
+#softdep snd-pcm post: snd-pcm-oss
+#blacklist forte
 
 bash /lib/udev/init-net-rules.sh
 cat /etc/udev/rules.d/70-persistent-net.rules
@@ -22,6 +22,7 @@ sed -i -e 's/"write_cd_rules"/"write_cd_rules mode"/' \
     /etc/udev/rules.d/83-cdrom-symlinks.rules
 
 udevadm info -a -p /sys/class/video4linux/video0
+
 
 cat > /etc/udev/rules.d/83-duplicate_devs.rules << "EOF"
 
@@ -33,13 +34,14 @@ KERNEL=="video*", ATTRS{device}=="0x036f", ATTRS{vendor}=="0x109e", \
 
 EOF
 
+
 cd /etc/sysconfig/
 cat > ifconfig.eth0 << "EOF"
 ONBOOT=yes
 IFACE=eth0
 SERVICE=ipv4-static
 IP=10.0.2.15
-GATEWAY=10.0.2.1
+GATEWAY=10.0.2.2
 PREFIX=24
 BROADCAST=10.0.2.255
 EOF
@@ -101,6 +103,7 @@ su:S016:once:/sbin/sulogin
 # End /etc/inittab
 EOF
 
+
 cat > /etc/sysconfig/clock << "EOF"
 # Begin /etc/sysconfig/clock
 
@@ -118,26 +121,23 @@ cat > /etc/sysconfig/console << "EOF"
 # Begin /etc/sysconfig/console
 
 UNICODE="1"
-KEYMAP="de-latin1"
-KEYMAP_CORRECTIONS="euro2"
-LEGACY_CHARSET="iso-8859-15"
-FONT="LatArCyrHeb-16 -m 8859-15"
+KEYMAP="us"
+FONT="lat1-16 -m 8859-1"
 
 # End /etc/sysconfig/console
 EOF
 
-SYSKLOGD_PARMS=
 
 # Optional /etc/sysconfig/rc.site 
 
+echo "SYSKLOGD_PARMS=" >> /etc/sysconfig/rc.site 
+echo "OMIT_UDEV_SETTLE=y" >> /etc/sysconfig/rc.site
+echo "OMIT_UDEV_RETRY_SETTLE=y" >> /etc/sysconfig/rc.site
+echo "SKIPTMPCLEAN=y" >> /etc/sysconfig/rc.site
+echo "KILLDELAY=0" >> /etc/sysconfig/rc.site
+
+
 locale -a
-
-LC_ALL=<locale name> locale charmap
-
-LC_ALL=<locale name> locale language
-LC_ALL=<locale name> locale charmap
-LC_ALL=<locale name> locale int_curr_symbol
-LC_ALL=<locale name> locale int_prefix
 
 cat > /etc/profile << "EOF"
 # Begin /etc/profile
@@ -146,6 +146,7 @@ export LANG=en_US
 
 # End /etc/profile
 EOF
+
 
 cat > /etc/inputrc << "EOF"
 # Begin /etc/inputrc
@@ -200,6 +201,7 @@ cat > /etc/shells << "EOF"
 # End /etc/shells
 EOF
 
+
 # http://linuxfromscratch.org/lfs/view/stable/chapter08/chapter08.html
 # Making LFS System Bootable
 
@@ -221,16 +223,19 @@ devtmpfs       /dev         devtmpfs mode=0755,nosuid    0     0
 # End /etc/fstab
 EOF
 
+
 hdparm -I /dev/sda | grep NCQ
 
-tar -xf Linux-4.15.3...
-cd Linux-4.15.3....
+tar -xf linux-4.15.3.tar.xz
+cd linux-4.15.3
 
 make mrproper
+make defconfig
 make menuconfig
 make
 make modules_install
 
+# OUTSIDE FROM CHROOT
 mount --bind /boot /mnt/lfs/boot
 
 cp -iv arch/x86/boot/bzImage /boot/vmlinuz-4.15.3-lfs-8.2
@@ -249,17 +254,18 @@ install uhci_hcd /sbin/modprobe ehci_hcd ; /sbin/modprobe -i uhci_hcd ; true
 EOF
 
 cd ../
-rm -R -f Linux-4.15.3....
+rm -R -f Linux-4.15.3
 
 
 grub-install /dev/sda
+
 cat > /boot/grub/grub.cfg << "EOF"
 # Begin /boot/grub/grub.cfg
 set default=0
 set timeout=5
 
 insmod ext2
-set root=(hd0,2)
+set root=(hd0,1)
 
 menuentry "GNU/Linux, Linux 4.15.3-lfs-8.2" {
         linux   /boot/vmlinuz-4.15.3-lfs-8.2 root=/dev/sda2 ro
