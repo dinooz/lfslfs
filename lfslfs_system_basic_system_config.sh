@@ -47,21 +47,20 @@ EOF
 cat > /etc/resolv.conf << "EOF"
 # Begin /etc/resolv.conf
 
-domain <Your Domain Name>
-nameserver <IP address of your primary nameserver>
-nameserver <IP address of your secondary nameserver>
+domain lfs.com
+nameserver 8.8.8.8
 
 # End /etc/resolv.conf
 EOF
 
-echo "lfslfs" > /etc/hostname
+echo "lfs" > /etc/hostname
 
 cat > /etc/hosts << "EOF"
 # Begin /etc/hosts
 
 127.0.0.1 localhost
-127.0.1.1 lfslfs
-10.0.2.15 lfslfs
+127.0.1.1 lfs
+10.0.2.15 lfs
 
 ::1       localhost ip6-localhost ip6-loopback
 ff02::1   ip6-allnodes
@@ -143,7 +142,7 @@ LC_ALL=<locale name> locale int_prefix
 cat > /etc/profile << "EOF"
 # Begin /etc/profile
 
-export LANG=<ll>_<CC>.<charmap><@modifiers>
+export LANG=en_US
 
 # End /etc/profile
 EOF
