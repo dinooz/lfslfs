@@ -11,5 +11,7 @@ wget https://raw.githubusercontent.com/dinooz/lfslfs/master/lfslfs_temporary_sys
 wget https://raw.githubusercontent.com/dinooz/lfslfs/master/lfslfs_system_chroot.sh
 wget https://raw.githubusercontent.com/dinooz/lfslfs/master/lfslfs_system_creating_dirs.sh
 wget https://raw.githubusercontent.com/dinooz/lfslfs/master/lfslfs_system_basic_system_software.sh
+wget https://raw.githubusercontent.com/dinooz/lfslfs/master/lfslfs_system_basic_system_cleanup.sh
+wget https://raw.githubusercontent.com/dinooz/lfslfs/master/lfslfs_system_basic_system_config.sh
 wget https://raw.githubusercontent.com/dinooz/lfslfs/master/lfslfs_HowTo.txt
 chmod 755 lfslfs*.sh
