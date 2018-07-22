@@ -4,7 +4,7 @@ cd /sources
 rm -R -f bash-4.4.18
 nowis=$(date +"%s")
 difftimelps=$(($nowis-$begin))
-echo "`date`    $difftimelps                    Processed: bash-4.4.18"          >>~/slfs_basic_sys.log
+echo -e "`date`\t$difftimelps\t\tProcessed: bash-4.4.18" >>~/slfs_basic_sys.log
 
 tar -xf libtool-2.4.6.tar.xz
 cd libtool-2.4.6
@@ -18,7 +18,7 @@ cd ../
 rm -R -f libtool-2.4.6
 nowis=$(date +"%s")
 difftimelps=$(($nowis-$begin))
-echo "`date`    $difftimelps                    Processed: libtool-2.4.6"          >>~/slfs_basic_sys.log
+echo -e "`date`\t$difftimelps\t\tProcessed: libtool-2.4.6" >>~/slfs_basic_sys.log
 
 tar -xf gdbm-1.14.1.tar.gz
 cd gdbm-1.14.1
@@ -35,7 +35,7 @@ cd ../
 rm -R -f gdbm-1.14.1
 nowis=$(date +"%s")
 difftimelps=$(($nowis-$begin))
-echo "`date`    $difftimelps                    Processed: gdbm-1.14.1"          >>~/slfs_basic_sys.log
+echo -e "`date`\t$difftimelps\t\tProcessed: gdbm-1.14.1" >>~/slfs_basic_sys.log
 
 tar -xf gperf-3.1.tar.gz
 cd gperf-3.1
@@ -49,7 +49,7 @@ cd ../
 rm -R -f gperf-3.1
 nowis=$(date +"%s")
 difftimelps=$(($nowis-$begin))
-echo "`date`    $difftimelps                    Processed: gperf-3.1"          >>~/slfs_basic_sys.log
+echo -e "`date`\t$difftimelps\t\tProcessed: gperf-3.1" >>~/slfs_basic_sys.log
 
 tar -xf expat-2.2.5.tar.bz2
 cd expat-2.2.5
@@ -66,7 +66,7 @@ cd ../
 rm -R -f expat-2.2.5
 nowis=$(date +"%s")
 difftimelps=$(($nowis-$begin))
-echo "`date`    $difftimelps                    Processed: expat-2.2.5"          >>~/slfs_basic_sys.log
+echo -e "`date`\t$difftimelps\t\tProcessed: expat-2.2.5" >>~/slfs_basic_sys.log
 
 tar -xf inetutils-1.9.4.tar.xz
 cd inetutils-1.9.4
@@ -92,7 +92,7 @@ cd ../
 rm -R -f inetutils-1.9.4
 nowis=$(date +"%s")
 difftimelps=$(($nowis-$begin))
-echo "`date`    $difftimelps                    Processed: inetutils-1.9.4"          >>~/slfs_basic_sys.log
+echo -e "`date`\t$difftimelps\t\tProcessed: inetutils-1.9.4" >>~/slfs_basic_sys.log
 
 tar -xf perl-5.26.1.tar.xz
 cd perl-5.26.1
@@ -118,7 +118,7 @@ cd ../
 rm -R -f perl-5.26.1
 nowis=$(date +"%s")
 difftimelps=$(($nowis-$begin))
-echo "`date`    $difftimelps                    Processed: perl-5.26.1"          >>~/slfs_basic_sys.log
+echo -e "`date`\t$difftimelps\t\tProcessed: perl-5.26.1" >>~/slfs_basic_sys.log
 
 tar -xf XML-Parser-2.44.tar.gz
 cd XML-Parser-2.44
@@ -132,7 +132,7 @@ cd ../
 rm -R -f XML-Parser-2.44
 nowis=$(date +"%s")
 difftimelps=$(($nowis-$begin))
-echo "`date`    $difftimelps                    Processed: XML-Parser-2.44"          >>~/slfs_basic_sys.log
+echo -e "`date`\t$difftimelps\t\tProcessed: XML-Parser-2.44" >>~/slfs_basic_sys.log
 
 tar -xf intltool-0.51.0.tar.gz
 cd intltool-0.51.0
@@ -148,7 +148,7 @@ cd ../
 rm -R -f intltool-0.51.0
 nowis=$(date +"%s")
 difftimelps=$(($nowis-$begin))
-echo "`date`    $difftimelps                    Processed: intltool-0.51.0"          >>~/slfs_basic_sys.log
+echo -e "`date`\t$difftimelps\t\tProcessed: intltool-0.51.0" >>~/slfs_basic_sys.log
 
 tar -xf autoconf-2.69.tar.xz
 cd autoconf-2.69
@@ -162,7 +162,7 @@ cd ../
 rm -R -f autoconf-2.69
 nowis=$(date +"%s")
 difftimelps=$(($nowis-$begin))
-echo "`date`    $difftimelps                    Processed: autoconf-2.69"          >>~/slfs_basic_sys.log
+echo -e "`date`\t$difftimelps\t\tProcessed: autoconf-2.69" >>~/slfs_basic_sys.log
 
 tar -xf automake-1.15.1.tar.xz
 cd automake-1.15.1
@@ -177,7 +177,7 @@ cd ../
 rm -R -f automake-1.15.1
 nowis=$(date +"%s")
 difftimelps=$(($nowis-$begin))
-echo "`date`    $difftimelps                    Processed: automake-1.15.1"          >>~/slfs_basic_sys.log
+echo -e "`date`\t$difftimelps\t\tProcessed: automake-1.15.1" >>~/slfs_basic_sys.log
 
 
 tar -xf xz-5.2.3.tar.xz
@@ -198,7 +198,7 @@ cd ../
 rm -R -f xz-5.2.3
 nowis=$(date +"%s")
 difftimelps=$(($nowis-$begin))
-echo "`date`    $difftimelps                    Processed: xz-5.2.3"          >>~/slfs_basic_sys.log
+echo -e "`date`\t$difftimelps\t\tProcessed: xz-5.2.3" >>~/slfs_basic_sys.log
 
 
 tar -xf kmod-25.tar.xz
@@ -223,7 +223,7 @@ cd ../
 rm -R -f kmod-25
 nowis=$(date +"%s")
 difftimelps=$(($nowis-$begin))
-echo "`date`    $difftimelps                    Processed: kmod-25"          >>~/slfs_basic_sys.log
+echo -e "`date`\t$difftimelps\t\tProcessed: kmod-25" >>~/slfs_basic_sys.log
 
 tar -xf gettext-0.19.8.1.tar.xz
 cd gettext-0.19.8.1
@@ -243,7 +243,7 @@ cd ../
 rm -R -f gettext-0.19.8.1
 nowis=$(date +"%s")
 difftimelps=$(($nowis-$begin))
-echo "`date`    $difftimelps                    Processed: gettext-0.19.8.1"          >>~/slfs_basic_sys.log
+echo -e "`date`\t$difftimelps\t\tProcessed: gettext-0.19.8.1" >>~/slfs_basic_sys.log
 
 
 tar -xf elfutils-0.170.tar.bz2
@@ -258,7 +258,7 @@ cd ../
 rm -R -f elfutils-0.170
 nowis=$(date +"%s")
 difftimelps=$(($nowis-$begin))
-echo "`date`    $difftimelps                    Processed: elfutils-0.170"          >>~/slfs_basic_sys.log
+echo -e "`date`\t$difftimelps\t\tProcessed: elfutils-0.170" >>~/slfs_basic_sys.log
 
 
 tar -xf libffi-3.2.1.tar.gz
@@ -280,7 +280,7 @@ cd ../
 rm -R -f libffi-3.2.1
 nowis=$(date +"%s")
 difftimelps=$(($nowis-$begin))
-echo "`date`    $difftimelps                    Processed: libffi-3.2.1"          >>~/slfs_basic_sys.log
+echo -e "`date`\t$difftimelps\t\tProcessed: libffi-3.2.1" >>~/slfs_basic_sys.log
 
 
 tar -xf openssl-1.1.0g.tar.gz
@@ -303,7 +303,7 @@ cd ../
 rm -R -f openssl-1.1.0g
 nowis=$(date +"%s")
 difftimelps=$(($nowis-$begin))
-echo "`date`    $difftimelps                    Processed: openssl-1.1.0g"          >>~/slfs_basic_sys.log
+echo -e "`date`\t$difftimelps\t\tProcessed: openssl-1.1.0g" >>~/slfs_basic_sys.log
 
 
 tar -xf Python-3.6.4.tar.xz
@@ -331,7 +331,7 @@ cd ../
 rm -R -f Python-3.6.4
 nowis=$(date +"%s")
 difftimelps=$(($nowis-$begin))
-echo "`date`    $difftimelps                    Processed: Python-3.6.4"          >>~/slfs_basic_sys.log
+echo -e "`date`\t$difftimelps\t\tProcessed: Python-3.6.4" >>~/slfs_basic_sys.log
 
 
 tar -xf ninja-1.8.2.tar.gz
@@ -353,7 +353,7 @@ cd ../
 rm -R -f ninja-1.8.2
 nowis=$(date +"%s")
 difftimelps=$(($nowis-$begin))
-echo "`date`    $difftimelps                    Processed: ninja-1.8.2"          >>~/slfs_basic_sys.log
+echo -e "`date`\t$difftimelps\t\tProcessed: ninja-1.8.2" >>~/slfs_basic_sys.log
 
 
 tar -xf meson-0.44.0.tar.gz
@@ -366,7 +366,7 @@ cd ../
 rm -R -f meson-0.44.0
 nowis=$(date +"%s")
 difftimelps=$(($nowis-$begin))
-echo "`date`    $difftimelps                    Processed: meson-0.44.0"          >>~/slfs_basic_sys.log
+echo -e "`date`\t$difftimelps\t\tProcessed: meson-0.44.0" >>~/slfs_basic_sys.log
 
 
 tar -xf procps-ng-3.3.12.tar.xz
@@ -393,7 +393,7 @@ cd ../
 rm -R -f procps-ng-3.3.12
 nowis=$(date +"%s")
 difftimelps=$(($nowis-$begin))
-echo "`date`    $difftimelps                    Processed: procps-ng-3.3.12"          >>~/slfs_basic_sys.log
+echo -e "`date`\t$difftimelps\t\tProcessed: procps-ng-3.3.12" >>~/slfs_basic_sys.log
 
 
 tar -xf e2fsprogs-1.43.9.tar.gz
@@ -429,7 +429,7 @@ cd ../../
 rm -R -f e2fsprogs-1.43.9
 nowis=$(date +"%s")
 difftimelps=$(($nowis-$begin))
-echo "`date`    $difftimelps                    Processed: e2fsprogs-1.43.9"          >>~/slfs_basic_sys.log
+echo -e "`date`\t$difftimelps\t\tProcessed: e2fsprogs-1.43.9" >>~/slfs_basic_sys.log
 
 
 tar -xf coreutils-8.29.tar.xz
@@ -462,7 +462,7 @@ cd ../
 rm -R -f coreutils-8.29
 nowis=$(date +"%s")
 difftimelps=$(($nowis-$begin))
-echo "`date`    $difftimelps                    Processed: coreutils-8.29"          >>~/slfs_basic_sys.log
+echo -e "`date`\t$difftimelps\t\tProcessed: coreutils-8.29" >>~/slfs_basic_sys.log
 
 
 tar -xf check-0.12.0.tar.gz
@@ -477,7 +477,7 @@ cd ../
 rm -R -f check-0.12.0
 nowis=$(date +"%s")
 difftimelps=$(($nowis-$begin))
-echo "`date`    $difftimelps                    Processed: check-0.12.0"          >>~/slfs_basic_sys.log
+echo -e "`date`\t$difftimelps\t\tProcessed: check-0.12.0" >>~/slfs_basic_sys.log
 
 
 tar -xf diffutils-3.6.tar.xz
@@ -492,7 +492,7 @@ cd ../
 rm -R -f diffutils-3.6
 nowis=$(date +"%s")
 difftimelps=$(($nowis-$begin))
-echo "`date`    $difftimelps                    Processed: diffutils-3.6"          >>~/slfs_basic_sys.log
+echo -e "`date`\t$difftimelps\t\tProcessed: diffutils-3.6" >>~/slfs_basic_sys.log
 
 
 tar -xf gawk-4.2.0.tar.xz
@@ -511,7 +511,7 @@ cd ../
 rm -R -f gawk-4.2.0
 nowis=$(date +"%s")
 difftimelps=$(($nowis-$begin))
-echo "`date`    $difftimelps                    Processed: gawk-4.2.0"          >>~/slfs_basic_sys.log
+echo -e "`date`\t$difftimelps\t\tProcessed: gawk-4.2.0" >>~/slfs_basic_sys.log
 
 
 tar -xf findutils-4.6.0.tar.gz
@@ -530,7 +530,7 @@ cd ../
 rm -R -f findutils-4.6.0
 nowis=$(date +"%s")
 difftimelps=$(($nowis-$begin))
-echo "`date`    $difftimelps                    Processed: findutils-4.6.0"          >>~/slfs_basic_sys.log
+echo -e "`date`\t$difftimelps\t\tProcessed: findutils-4.6.0" >>~/slfs_basic_sys.log
 
 
 tar -xf groff-1.22.3.tar.gz
@@ -544,7 +544,7 @@ cd ../
 rm -R -f groff-1.22.3
 nowis=$(date +"%s")
 difftimelps=$(($nowis-$begin))
-echo "`date`    $difftimelps                    Processed: groff-1.22.3"          >>~/slfs_basic_sys.log
+echo -e "`date`\t$difftimelps\t\tProcessed: groff-1.22.3" >>~/slfs_basic_sys.log
 
 
 tar -xf grub-2.02.tar.xz
@@ -563,7 +563,7 @@ cd ../
 rm -R -f grub-2.02
 nowis=$(date +"%s")
 difftimelps=$(($nowis-$begin))
-echo "`date`    $difftimelps                    Processed: grub-2.02"          >>~/slfs_basic_sys.log
+echo -e "`date`\t$difftimelps\t\tProcessed: grub-2.02" >>~/slfs_basic_sys.log
 
 
 tar -xf less-530.tar.gz
@@ -577,7 +577,7 @@ cd ../
 rm -R -f less-530
 nowis=$(date +"%s")
 difftimelps=$(($nowis-$begin))
-echo "`date`    $difftimelps                    Processed: less-530"          >>~/slfs_basic_sys.log
+echo -e "`date`\t$difftimelps\t\tProcessed: less-530" >>~/slfs_basic_sys.log
 
 
 tar -xf gzip-1.9.tar.xz
@@ -594,7 +594,7 @@ cd ../
 rm -R -f gzip-1.9
 nowis=$(date +"%s")
 difftimelps=$(($nowis-$begin))
-echo "`date`    $difftimelps                    Processed: gzip-1.9"          >>~/slfs_basic_sys.log
+echo -e "`date`\t$difftimelps\t\tProcessed: gzip-1.9" >>~/slfs_basic_sys.log
 
 
 tar -xf iproute2-4.15.0.tar.xz
@@ -611,7 +611,7 @@ cd ../
 rm -R -f iproute2-4.15.0
 nowis=$(date +"%s")
 difftimelps=$(($nowis-$begin))
-echo "`date`    $difftimelps                    Processed: iproute2-4.15.0"          >>~/slfs_basic_sys.log
+echo -e "`date`\t$difftimelps\t\tProcessed: iproute2-4.15.0" >>~/slfs_basic_sys.log
 
 
 tar -xf kbd-2.0.4.tar.xz
@@ -633,7 +633,7 @@ cd ../
 rm -R -f kbd-2.0.4
 nowis=$(date +"%s")
 difftimelps=$(($nowis-$begin))
-echo "`date`    $difftimelps                    Processed: kbd-2.0.4"          >>~/slfs_basic_sys.log
+echo -e "`date`\t$difftimelps\t\tProcessed: kbd-2.0.4" >>~/slfs_basic_sys.log
 
 
 tar -xf libpipeline-1.5.0.tar.gz
@@ -648,7 +648,7 @@ cd ../
 rm -R -f libpipeline-1.5.0
 nowis=$(date +"%s")
 difftimelps=$(($nowis-$begin))
-echo "`date`    $difftimelps                    Processed: libpipeline-1.5.0"          >>~/slfs_basic_sys.log
+echo -e "`date`\t$difftimelps\t\tProcessed: libpipeline-1.5.0" >>~/slfs_basic_sys.log
 
 
 tar -xf make-4.2.1.tar.bz2
@@ -664,7 +664,7 @@ cd ../
 rm -R -f make-4.2.1
 nowis=$(date +"%s")
 difftimelps=$(($nowis-$begin))
-echo "`date`    $difftimelps                    Processed: make-4.2.1"          >>~/slfs_basic_sys.log
+echo -e "`date`\t$difftimelps\t\tProcessed: make-4.2.1" >>~/slfs_basic_sys.log
 
 
 tar -xf patch-2.7.6.tar.xz
@@ -679,7 +679,7 @@ cd ../
 rm -R -f patch-2.7.6
 nowis=$(date +"%s")
 difftimelps=$(($nowis-$begin))
-echo "`date`    $difftimelps                    Processed: patch-2.7.6"          >>~/slfs_basic_sys.log
+echo -e "`date`\t$difftimelps\t\tProcessed: patch-2.7.6" >>~/slfs_basic_sys.log
 
 
 tar -xf sysklogd-1.5.1.tar.gz
@@ -708,7 +708,7 @@ cd ../
 rm -R -f sysklogd-1.5.1
 nowis=$(date +"%s")
 difftimelps=$(($nowis-$begin))
-echo "`date`    $difftimelps                    Processed: sysklogd-1.5.1"          >>~/slfs_basic_sys.log
+echo -e "`date`\t$difftimelps\t\tProcessed: sysklogd-1.5.1" >>~/slfs_basic_sys.log
 
 
 tar -xf sysvinit-2.88dsf.tar.bz2
@@ -722,7 +722,7 @@ cd ../
 rm -R -f sysvinit-2.88dsf
 nowis=$(date +"%s")
 difftimelps=$(($nowis-$begin))
-echo "`date`    $difftimelps                    Processed: sysvinit-2.88dsf"          >>~/slfs_basic_sys.log
+echo -e "`date`\t$difftimelps\t\tProcessed: sysvinit-2.88dsf" >>~/slfs_basic_sys.log
 
 
 tar -xf eudev-3.2.5.tar.gz
@@ -765,7 +765,7 @@ cd ../
 rm -R -f eudev-3.2.5
 nowis=$(date +"%s")
 difftimelps=$(($nowis-$begin))
-echo "`date`    $difftimelps                    Processed: eudev-3.2.5"          >>~/slfs_basic_sys.log
+echo -e "`date`\t$difftimelps\t\tProcessed: eudev-3.2.5" >>~/slfs_basic_sys.log
 
 
 tar -xf util-linux-2.31.1.tar.xz
@@ -794,7 +794,7 @@ cd ../
 rm -R -f util-linux-2.31.1
 nowis=$(date +"%s")
 difftimelps=$(($nowis-$begin))
-echo "`date`    $difftimelps                    Processed: util-linux-2.31.1"          >>~/slfs_basic_sys.log
+echo -e "`date`\t$difftimelps\t\tProcessed: util-linux-2.31.1" >>~/slfs_basic_sys.log
 
 
 tar -xf man-db-2.8.1.tar.xz
@@ -817,7 +817,7 @@ cd ../
 rm -R -f man-db-2.8.1
 nowis=$(date +"%s")
 difftimelps=$(($nowis-$begin))
-echo "`date`    $difftimelps                    Processed: man-db-2.8.1"          >>~/slfs_basic_sys.log
+echo -e "`date`\t$difftimelps\t\tProcessed: man-db-2.8.1" >>~/slfs_basic_sys.log
 
 
 tar -xf tar-1.30.tar.xz
@@ -836,7 +836,7 @@ cd ../
 rm -R -f tar-1.30
 nowis=$(date +"%s")
 difftimelps=$(($nowis-$begin))
-echo "`date`    $difftimelps                    Processed: tar-1.30"          >>~/slfs_basic_sys.log
+echo -e "`date`\t$difftimelps\t\tProcessed: tar-1.30" >>~/slfs_basic_sys.log
 
 
 tar -xf texinfo-6.5.tar.xz
@@ -859,7 +859,7 @@ cd ../
 rm -R -f texinfo-6.5
 nowis=$(date +"%s")
 difftimelps=$(($nowis-$begin))
-echo "`date`    $difftimelps                    Processed: texinfo-6.5"          >>~/slfs_basic_sys.log
+echo -e "`date`\t$difftimelps\t\tProcessed: texinfo-6.5" >>~/slfs_basic_sys.log
 
 
 tar -xf vim-8.0.586.tar.bz2
@@ -902,7 +902,7 @@ cd ../
 rm -R -f vim80
 nowis=$(date +"%s")
 difftimelps=$(($nowis-$begin))
-echo "`date`    $difftimelps                    Processed: vim80"          >>~/slfs_basic_sys.log
+echo -e "`date`\t$difftimelps\t\tProcessed: vim80" >>~/slfs_basic_sys.log
 
 
 save_lib="ld-2.27.so libc-2.27.so libpthread-2.27.so libthread_db-1.0.so"
