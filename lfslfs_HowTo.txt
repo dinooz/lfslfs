@@ -6,14 +6,28 @@ As Xubuntu download lfslfs_get_started.sh
 
 sudo ./lfslfs_initial_ubuntu.sh
 
+
+# Ignore this script need some work....
+# Use gparted create 2 Partitions
+
+# Initialize /dev/sda Drive.
+# /dev/sda1 /boot ext2 100Mb
+# /dev/sda2 /system ext4 9.9GB
+# Dismount the default mounted partitions from Xubuntu since we will mount manually.
+
 sudo ./lfslfs_parted.sh
 - Xubuntu GUI-> Dismount this 2 new partitions that got automatically mounted
 
 - Verify LFS Dependencies could be as regular user or root
 ./lfslfs_reqs_check.sh
 sudo ./lfslfs_reqs_check.sh
+sudo ./lfslfs_reqs_check.sh |grep not
 
 sudo ./lfslfs_reqs_install.sh
+
+Check Again... everything Looks good now.
+     sudo ./lfslfs_reqs_check.sh
+     sudo ./lfslfs_reqs_check.sh |grep not
 
 - As root:
 export LFS=/mnt/lfs
@@ -32,15 +46,28 @@ su - lfs
 cd $LFS/sources
 ./lfslfs_temporary_system.sh
 
-- Temporary System build log at:
+- Open with Screen another terminal and check the progress of the Installation
 - tail -f /home/lfs/slfs_temp_sys.log
+- Once Completed a mesg "WHO IS THE MAN" will be on the screen.
 
 - As root
 cp /home/xubuntu/lfslfs_system_creating_dirs.sh $LFS/sources
 cp /home/xubuntu/lfslfs_system_basic_system_software.sh $LFS/sources
+cp /home/xubuntu/lfslfs_system_basic_system_software2.sh $LFS/sources
 /home/xubuntu/lfslfs_system_chroot.sh
 
 - As chroot
-- export LFS=/mnt/lfs
-$LFS/sources/lfslfs_system_creating_dirs.sh
-$LFS/sources/lfslfs_system_basic_system_software.sh
+/sources/lfslfs_system_creating_dirs.sh
+/sources/lfslfs_system_basic_system_software.sh
+- Open with Screen another terminal and check the progress of the Installation
+- tail -f /root/slfs_basic_sys.log
+
+- As chroot
+-Right after grep processing bash the Shell script will stop.
+/sources/lfslfs_system_basic_system_software2.sh
+
+- This script will continue appending slfs_basic_sys.log
+- Open with Screen another terminal and check the progress of the Installation
+- tail -f /root/slfs_basic_sys.log
+
+TBD... Last part of the script .... stay tunned....
