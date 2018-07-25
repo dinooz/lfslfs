@@ -62,6 +62,18 @@ cp /home/xubuntu/lfslfs_system_basic_system_software2.sh $LFS/sources
 - Open with Screen another terminal and check the progress of the Installation
 - tail -f /root/slfs_basic_sys.log
 
+-NOTE: The script will require manual intervention for glibc configuraiton
+Select Contintent [ 2 :: Americas ]
+Select Country [ 49 :: united States ]
+Select TimeZone [ 11 :: Central ]
+Select Confirmation [ 1 :: Yes ]
+
+-NOTE: THe script will require manual intervention for shadow for root password
+-Enter root password:
+
+-Finally the script will stop right after execute the new Bash profile.
+
+
 - As chroot
 -Right after grep processing bash the Shell script will stop.
 /sources/lfslfs_system_basic_system_software2.sh
@@ -70,4 +82,30 @@ cp /home/xubuntu/lfslfs_system_basic_system_software2.sh $LFS/sources
 - Open with Screen another terminal and check the progress of the Installation
 - tail -f /root/slfs_basic_sys.log
 
-TBD... Last part of the script .... stay tunned....
+
+- Exit from the Environment with logout
+- /home/xubuntu/lfslfs_system_basic_system_cleanup.sh
+- This Script will be copy/paste for chroot and execution.
+- Cleanup -> From root -> chroot
+- Paste the First part of the Clenaup Script.
+
+
+-System Config
+cp /home/xubuntu/lfslfs_system_basic_system_config.sh $LFS/sources
+
+- As chroot
+/sources/lfslfs_system_basic_system_config.sh
+
+- As xubuntu
+cat /home/xubuntu/lfslfs_system_basic_system_config2.sh |less
+- Start Copy paste parts of the script...
+
+-NOTE /dev/sda1 partition must have 2 Folders
+     boot
+     grub
+- Right into the boot directory must be 
+     System.map-4.15.3
+     vmlinuz-4.15.3-lfs-8.2
+
+Otherwise will not be able to foudn it on boot.
+
